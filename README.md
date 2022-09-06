@@ -2,7 +2,12 @@
 My Django playground. The place where I can do want ever I want, I can test what ever I want, just to learn Django.
 
 
-
+## Very important note
+Hide the secret key , you can do the following code in settings.py
+```
+import os
+SECRET_KEY = os.environ.get('SECRET_KEY', 'somesecret')
+```
 
 ## Some notes:
 Source link : https://www.djangoproject.com/start/
