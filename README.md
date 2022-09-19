@@ -67,3 +67,12 @@ Creating an admin user
 
 sample account that I created for this test *admin:Ironman1234*
 
+### Writing your first Django app, part 3
+
+Routine:
+1. Create View in views.py
+2. Wire it to the urls.py
+3. Create template *templates/folder/html file*
+
+- *django.shortcuts* module is very usefull
+- Use *{% url %}* template tag
