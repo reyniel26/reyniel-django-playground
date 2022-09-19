@@ -61,3 +61,9 @@ Playing with API
 
 6. `python manage.py shell`
 
+Creating an admin user
+
+7. `python manage.py createsuperuser`
+
+sample account that I created for this test *admin:Ironman1234*
+
