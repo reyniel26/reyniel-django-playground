@@ -143,3 +143,45 @@ django.test.TestCase
 >> Just like templates, we might be able to get away with putting our static files directly in polls/static (rather than creating another polls subdirectory), but it would actually be a bad idea. Django will choose the first static file it finds whose name matches, and if you had a static file with the same name in a different application, Django would be unable to distinguish between them. We need to be able to point Django at the right one, and the best way to ensure this is by namespacing them. That is, by putting those static files inside another directory named for the application itself.
 
 - `{% static %}`  template tag generates the absolute URL of static files.
+
+### Writing your first Django app, part 7
+
+1. Customize the admin form
+
+**Best Practice Alert!!!:**
+- You’ll follow this pattern – create a model admin class, then pass it as the second argument to admin.site.register() – any time you need to change the admin options for a model.
+
+2. Customize the admin change list
+
+- `@admin.display` - decorator to improve display of particular column or function
+- `list_display = ()`
+-  `list_filter = []`
+- `search_fields = []`
+
+Customize the admin look and feel
+- Overide the admin html templates
+1. Create template folder in root, and create admin folder inside
+2. Update the **TEMPLATES** in `site/settings.py`
+```
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [BASE_DIR / 'templates'],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+```
+3. Copy the template you want to override, for example *base_site.html*. To locate the location of the html you can run this code, `py -c "import django; print(django.__path__)"`. Then go to **django/contrib/admin/templates**
+
+
+### Some pointers to consider
+Visit https://docs.djangoproject.com/en/4.1/intro/whatsnext/
+
