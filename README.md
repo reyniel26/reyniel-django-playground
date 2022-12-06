@@ -185,3 +185,11 @@ TEMPLATES = [
 ### Some pointers to consider
 Visit https://docs.djangoproject.com/en/4.1/intro/whatsnext/
 
+
+
+# Learn some django rest framework
+
+1. `pip install djangorestframework`
+2. `pip install django-oauth-toolkit django-cors-headers`
+- CORS use to accept defined domains to access the app sheesh
+
